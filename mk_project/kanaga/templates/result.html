@@ -1,19 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Student Result</h1>
-    <p>Name: {{student.name}}</p>
-    <p>Mark: {{student.mark}}</p>
-    {% if student.mark >=50 %}
-         <p>Pass</p>
-    {% else %} 
-         <p>Fail</p>
-    {% endif %}         
-
+     <form>
+        <h2>Student Result</h2>
+        <label>Name</label>
+        <p>{{ student.name }}</p>
+        <label>Roll Number</label>
+        <p>{{ student.roll_number }}</p>
+        <label>Mark</label>
+        <p>{{ student.mark }}</p>
+        <label>Result</label>
+        {% if student.mark >= 50 %}
+            <p style="color:green;">✅ Pass</p>
+        {% else %}
+            <p style="color:red;">❌ Fail</p>
+        {% endif %}
+    </form>
 </body>
 </html>

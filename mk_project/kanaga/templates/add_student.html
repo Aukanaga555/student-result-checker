@@ -1,17 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <form method="POST">
         {% csrf_token %}
+        <h2>Add Student</h2>
+        <label>Name</label>
         <input type="text" name="name">
+
+        <label>Roll Number</label>
         <input type="number" name="roll_number">
+
+        <label>Date of Birth</label>
         <input type="date" name="dob">
+
+        <label>Mark</label>
         <input type="number" name="mark">
+        
         <button type="submit">Add Student</button>
     </form>
 </body>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from.models import Student
 
 def add_student(request):
@@ -21,4 +21,5 @@ def search_result(request):
     if request.method=='POST':
         roll_number=request.POST['roll_number'] 
         student=Student.objects.get(roll_number=roll_number)
-        return render(request,'result.html',{'student':student})   
+        return render(request,'result.html',{'student':student}) 
+    return render(request,'search.html')      
